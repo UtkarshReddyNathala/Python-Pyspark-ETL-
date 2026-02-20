@@ -1,2 +1,2 @@
-# Production configuration
-# This file will contain production database and S3 credentials
+# Production environment configuration
+# Replace with actual production credentials when deploying
