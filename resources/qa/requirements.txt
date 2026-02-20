@@ -1,1 +1,6 @@
-key=5
+# QA environment dependencies
+# Used for testing and validation before production deployment
+
+pyspark==3.5.0
+boto3==1.34.0
+mysql-connector-python==8.0.33
