@@ -1,11 +1,10 @@
 # **Python PySpark ETL Pipeline – Retail Sales Data**
 
- **Project Overview**
 This project is a backend data processing system designed using production best practices for retail sales. It automates ingestion, validation, enrichment, transformation, and analytics-ready data mart creation using Python, PySpark, AWS S3, and MySQL.
+
 The pipeline is modular, secure, and optimized, supporting multiple environments (dev/QA/prod), Spark partitioning, business calculations like salesperson incentives, and automated cleanup for production-grade workflows.
 
 ---
-
  **Tech Stack**
 
 * Python 3.10 – Core programming language
@@ -16,13 +15,13 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * Faker – Synthetic data generation for testing
 * Docker – Optional local Spark setup
 * Logging & Utilities – Encryption/decryption, AWS clients, Spark session, file management
-
 ---
 ## Data Architecture
 <img src="architecture.png" width="600">
 
 ## Data Model
 <img src="database_schema.drawio.png" width="600">
+
 ---
 
 ✅ **Key Features**
@@ -215,5 +214,5 @@ Python-Pyspark-ETL/
 ---
 
 **Author:** Utkarsh Reddy Nathala
-**LinkedIn:** [https://www.linkedin.com/in/utkarsh-reddy-nathala](https://www.linkedin.com/in/utkarsh-reddy-nathala)
+**LinkedIn:** https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
