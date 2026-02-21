@@ -16,9 +16,15 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * Docker – Optional local Spark setup
 * Logging & Utilities – Encryption/decryption, AWS clients, Spark session, file management
 ---
-## Data Architecture <img src="architecture.png" width="600">
+<h2 align="center">Data Architecture</h2>
+<p align="center">
+  <img src="architecture.png" width="600">
+</p>
 
-## Data Model <img src="database_schema.drawio.png" width="600">
+<h2 align="center">Data Model</h2>
+<p align="center">
+  <img src="database_schema.drawio.png" width="600">
+</p>">
 ---
 ##  Key Features
 
