@@ -102,10 +102,6 @@ my_project/
 │       └── generate_csv_data.py
 ```
 
----
-
-![Data Flow](Dataflow.png)
-
 
 ## Data Flow and Features
 
@@ -178,7 +174,9 @@ my_project/
       * Database access
       * Transformations
       * Utilities for maintainability and scalability
-     
+
+
+     ![Data Flow](Dataflow.png)
 
 ---
 
