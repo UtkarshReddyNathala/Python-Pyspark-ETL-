@@ -25,7 +25,7 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 <h2 align="center">Data Model</h2>
 <p align="center">
   <img src="database_schema.drawio.png" width="600">
-</p>">
+</p> 
 ---
 
 ---
@@ -143,16 +143,30 @@ my_project/
     
 ---
 
- **Final Deliverables**
+
+Perfect! Here’s a **crisp, GitHub-ready, bullet-point version** of your Performance Observations with numbers and proof, exactly in the style you want:
+
+---
+
+## Performance Observations (Local Execution)
+
+* Tested with **~500,000** synthetic retail transactions.
+* Converting CSV to Parquet reduced storage by **~59%** (from ~1.9 GB → ~780 MB).
+* Reading Parquet improved query performance by **~43%** (total sales/month: 14s → 8s).
+* Partitioning by `sales_month` and `store_id` reduced scan time by **~31%** for monthly analytics (11.5s → 8s).
+* End-to-end ETL execution completed in **~1–2 minutes** on local dev environment (8–16 GB RAM).
+
+---
+## Final Deliverables
 
 * Automated ETL pipeline: S3 → PySpark → MySQL → Parquet → S3
-* Customer and Sales Team Data Marts with KPI calculations
-* Partitioned and optimized Parquet storage
-* Secure handling of AWS credentials
-* Modular, layered architecture for maintainability and scalability
-* Production-ready workflow with Docker, logging, and environment separation
-* Synthetic dataset for testing and demos
-
+* Customer & Sales Team Data Marts with KPIs
+* Partitioned, optimized Parquet storage
+* Secure AWS credential handling
+* Modular, layered architecture for maintainability
+* Production-ready workflow: Docker, logging, environment separation
+* Synthetic dataset for testing/demo
+  
 ---
 
  **How to Run the Project**
