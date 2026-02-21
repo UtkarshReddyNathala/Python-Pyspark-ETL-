@@ -180,12 +180,11 @@ my_project/
       * Transformations
       * Utilities for maintainability and scalability
 
+<p align="center">
+  <img src="Dataflow.png" alt="Data Flow" style="max-width:100%; height:auto;">
+</p>
+
 **Generate → Validate → Enrich → Transform → Aggregate → Store → Cleanup**
-
----
-
-    <img src="Dataflow.png" alt="Data Flow" width="1300">
-
 ---
 
 ## Performance Observations (Local Execution)
