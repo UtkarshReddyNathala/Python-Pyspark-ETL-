@@ -1,4 +1,12 @@
-# sales_mart_sql_transform_write_py
+"""
+sales_mart_sql_transform_write.py
+=================================
+
+Module Purpose:
+This module performs the transformation and calculation for the sales team
+data mart, including monthly total sales, ranking, and incentives. 
+Finally, it writes the processed data into the MySQL sales_team_data_mart table.
+"""
 
 from pyspark.sql.functions import (
     col,
@@ -16,13 +24,18 @@ from resources.dev import config
 from src.main.write.database_write import DatabaseWriter
 
 
-# calculation for sales mart
-# find out the sales person total sales every month
-# write the data in MySQL table
-
 def sales_mart_calculation_table_write(final_sales_team_data_mart_df):
+    """
+    Calculate monthly sales, rank salespersons, calculate incentives,
+    and write the results to the sales_team_data_mart MySQL table.
 
-    # window for monthly aggregation
+    Args:
+        final_sales_team_data_mart_df: Spark DataFrame containing raw sales team data
+    """
+
+    # --------------------------------------
+    # Step 1: Monthly total sales per salesperson
+    # --------------------------------------
     window = Window.partitionBy(
         "store_id",
         "sales_person_id",
@@ -31,14 +44,17 @@ def sales_mart_calculation_table_write(final_sales_team_data_mart_df):
 
     final_sales_team_data_mart = (
         final_sales_team_data_mart_df
+        # Extract month from sales_date (YYYY-MM)
         .withColumn(
             "sales_month",
             substring(col("sales_date"), 1, 7)
         )
+        # Calculate total sales for the month per salesperson
         .withColumn(
             "total_sales_every_month",
             sum(col("total_cost")).over(window)
         )
+        # Select relevant columns with full_name concatenation
         .select(
             "store_id",
             "sales_person_id",
@@ -53,7 +69,9 @@ def sales_mart_calculation_table_write(final_sales_team_data_mart_df):
         .distinct()
     )
 
-    # ranking window
+    # --------------------------------------
+    # Step 2: Ranking salespersons within store & month
+    # --------------------------------------
     rank_window = Window.partitionBy(
         "store_id",
         "sales_month"
@@ -63,10 +81,12 @@ def sales_mart_calculation_table_write(final_sales_team_data_mart_df):
 
     final_sales_team_data_mart_table = (
         final_sales_team_data_mart
+        # Rank salespersons
         .withColumn(
             "rnk",
             rank().over(rank_window)
         )
+        # Calculate incentive: 1% for top-ranked salesperson
         .withColumn(
             "incentive",
             when(
@@ -78,10 +98,12 @@ def sales_mart_calculation_table_write(final_sales_team_data_mart_df):
             "incentive",
             round(col("incentive"), 2)
         )
+        # Copy total_sales column
         .withColumn(
             "total_sales",
             col("total_sales_every_month")
         )
+        # Select final columns for MySQL write
         .select(
             "store_id",
             "sales_person_id",
@@ -92,8 +114,10 @@ def sales_mart_calculation_table_write(final_sales_team_data_mart_df):
         )
     )
 
-    # Write the Data into MySQL sales_team_data_mart table
-    print("writing the data into sales team data mart")
+    # --------------------------------------
+    # Step 3: Write final DataFrame to MySQL
+    # --------------------------------------
+    print("Writing the data into sales_team_data_mart table...")
 
     db_writer = DatabaseWriter(
         url=config.url,
