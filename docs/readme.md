@@ -1,14 +1,11 @@
 # **Python PySpark ETL Pipeline – Retail Sales Data**
 
-Designed a backend Data Pipeline that automatically retrieves raw files from cloud storage Amaon S3, verifies data correctness, and prepares structured outputs ready for database storage and reporting.
+* **Built an end-to-end backend ETL pipeline using Python and PySpark**, retrieving raw CSV files from **AWS S3**, validating schemas, enriching data via **MySQL dimension tables**, and creating analytics-ready **Customer and Sales Team data marts**.
+* **Implemented modular, layered architecture with Python packages** to separate file handling, database access, **Spark transformations**, and shared utilities, improving maintainability, debugging, and enabling future enhancements.
+* **Optimized Spark processing with partitioned Parquet storage** by `sales_month` and `store_id`, leveraged Spark window functions for rankings, and automated business calculations (e.g., top salesperson incentives), improving query performance by **~43%** and reducing scan times by **~31%**.
+* **Deployed production-ready workflow with Python/PySpark and Docker**, including centralized logging, environment-specific configs (dev/QA/prod), automated S3 uploads, MySQL staging updates (`active`/`inactive`), and synthetic test datasets generation with **Faker**, reducing storage by **~59%** (1.9 GB → 780 MB) and completing end-to-end ETL in **~1–2 minutes** on local development (8–16 GB RAM).
 
-Implemented a clean, layered project architecture using Python packages to isolate file handling, database access, business transformations, and shared utilities, enabling easier debugging and future enhancements.
 
-Built reliable integration logic to move data between AWS S3 and a MySQL database, handling connection management, secure credentials, and controlled read/write operations.
-
-Established a production-ready execution setup using Docker, centralized logging, and environment-specific configurations to ensure consistent behavior across development and testing systems.
-
----
 ##  Tech Stack
 
 * **Python 3.10** – Core programming language
@@ -189,7 +186,7 @@ my_project/
 * Tested with **~500,000** synthetic retail transactions.
 * Converting CSV to Parquet reduced storage by **~59%** (from ~1.9 GB → ~780 MB).
 * Reading Parquet improved query performance by **~43%** (total sales/month: 14s → 8s).
-* Partitioning by **sales_month** and **store_id** reduced scan time by **~31%** for monthly analytics (11.5s → 8s).
+* Partitioning by **sales_month** and **store_id** reduced query time by **~31%** for monthly analytics (11.5s → 8s).
 * End-to-end ETL execution completed in **~1–2 minutes** on local dev environment (8–16 GB RAM).
 
 ---
