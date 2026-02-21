@@ -176,7 +176,7 @@ my_project/
       * Utilities for maintainability and scalability
 
 
-    <img src="Dataflow.png" alt="Data Flow" width="800">
+    <img src="Dataflow.png" alt="Data Flow" width="1000">
 
 ---
 
