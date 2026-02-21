@@ -1,5 +1,5 @@
 ---
-                                      ***Python PySpark ETL Pipeline – Retail Sales Data***
+                                      # Python PySpark ETL Pipeline – Retail Sales Data
 
 📦 **Project Overview**
 This project is a backend data processing system designed using production best practices for retail sales. It automates ingestion, validation, enrichment, transformation, and analytics-ready data mart creation using Python, PySpark, AWS S3, and MySQL.
@@ -210,4 +210,4 @@ Python-Pyspark-ETL/
 ---
 
 
-Do you want me to do that next?
+
