@@ -3,6 +3,9 @@ import csv
 import random
 from datetime import datetime
 
+# ------------------------------
+# Configuration
+# ------------------------------
 customer_ids = list(range(1, 21))
 store_ids = list(range(121, 124))
 product_data = {
@@ -21,19 +24,40 @@ sales_persons = {
     123: [7, 8, 9]
 }
 
+# Output folder
 file_location = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data"
-
 if not os.path.exists(file_location):
     os.makedirs(file_location)
 
+# ------------------------------
+# Input date for sales data
+# ------------------------------
 input_date_str = input("Enter the date for which you want to generate (YYYY-MM-DD): ")
 input_date = datetime.strptime(input_date_str, "%Y-%m-%d")
 
+# CSV file path
 csv_file_path = os.path.join(file_location, f"sales_data_{input_date_str}.csv")
+
+# ------------------------------
+# Generate CSV file
+# ------------------------------
 with open(csv_file_path, "w", newline="") as csvfile:
     csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(["customer_id", "store_id", "product_name", "sales_date", "sales_person_id", "price", "quantity", "total_cost", "payment_mode"])
 
+    # Header row (note: extra column 'payment_mode')
+    csvwriter.writerow([
+        "customer_id",
+        "store_id",
+        "product_name",
+        "sales_date",
+        "sales_person_id",
+        "price",
+        "quantity",
+        "total_cost",
+        "payment_mode"
+    ])
+
+    # Generate 1000 sales records
     for _ in range(1000):
         customer_id = random.choice(customer_ids)
         store_id = random.choice(store_ids)
@@ -43,9 +67,22 @@ with open(csv_file_path, "w", newline="") as csvfile:
         quantity = random.randint(1, 10)
         price = product_data[product_name]
         total_cost = price * quantity
-        payment_mode = random.choice(["cash", "UPI"])
+        payment_mode = random.choice(["cash", "UPI"])  # extra column
 
-        csvwriter.writerow(
-            [customer_id, store_id, product_name, sales_date.strftime("%Y-%m-%d"), sales_person_id, price, quantity, total_cost, payment_mode])
+        # Write row
+        csvwriter.writerow([
+            customer_id,
+            store_id,
+            product_name,
+            sales_date.strftime("%Y-%m-%d"),
+            sales_person_id,
+            price,
+            quantity,
+            total_cost,
+            payment_mode
+        ])
 
-    print("CSV file generated successfully:", csv_file_path)
+# ------------------------------
+# Done
+# ------------------------------
+print("CSV file generated successfully:", csv_file_path)
