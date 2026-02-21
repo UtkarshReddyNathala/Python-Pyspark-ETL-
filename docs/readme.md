@@ -104,17 +104,8 @@ my_project/
 
 ---
 
-## Data Flow and Features
+![Data Flow](Dataflow.png)
 
-Exactly! If you want the **flow to reflect reality**, it makes sense to move these two sections to the **start**, because in a real project:
-
-1. You **first generate or receive the data** (either synthetic for testing or real raw CSVs).
-2. Then you **ingest it from S3** (or local source) for processing.
-3. After that comes **validation, enrichment, transformation**, and so on.
-
-Here’s how the reordered **Data Flow and Features** section should look:
-
----
 
 ## Data Flow and Features
 
@@ -188,7 +179,6 @@ Here’s how the reordered **Data Flow and Features** section should look:
       * Transformations
       * Utilities for maintainability and scalability
      
-![Data Flow](DataFlow.png)
 
 ---
 
