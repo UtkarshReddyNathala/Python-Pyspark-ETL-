@@ -24,38 +24,30 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 <img src="database_schema.drawio.png" width="600">
 
 ---
-
-✅ **Key Features**
-
-- **Backend Data Processing:** Retrieves raw files from AWS S3, validates schemas, and prepares structured outputs for analytics.
-
-- **Layered Architecture:** Modular Python packages separate file handling, database access, business transformations, and utilities for maintainability.
-
-- **Secure AWS Integration:** Encrypted credentials with custom modules; controlled read/write operations.
-
-- **Multiple Environments:** Separate configs for dev, QA, and prod with environment-specific credentials, S3 buckets, and database connections.
-
-- **Schema Validation:** Detects missing mandatory columns; separates invalid files for auditing.
-
-- **Data Enrichment:** Joins raw sales data with MySQL dimension tables — Customers, Stores, Products, Sales Team.
-
-- **Customer Data Mart:** Aggregates total purchases per customer.
-
-- **Sales Team Data Mart:** Calculates monthly sales, salesperson rankings, and incentives using Spark window functions.
-
-- **Spark Optimization & Partitioning:**
-  - Writes partitioned Parquet files by `sales_month` and `store_id` for analytics performance.
-  - Uses window functions for ranking and aggregations.
-
-- **Business Calculations:** Incentive calculation for top-ranked salespersons (1% of total sales).
-
-- **Automated Cleanup & Staging Update:** Moves processed files to S3, deletes local temporary files, and updates MySQL staging table status.
-
-- **Production-Ready Execution:** Docker-based Spark setup, centralized logging, and environment-specific configs ensure consistent behavior across systems.
+Yes! You can remove the extra space between the heading and the first point so it looks **tighter and cleaner** in GitHub README. Here’s your section reformatted:
 
 ---
 
- **Project Structure**
+##  Key Features
+
+* **Backend Data Processing:** Retrieves raw files from AWS S3, validates schemas, and prepares structured outputs for analytics.
+* **Layered Architecture:** Modular Python packages separate file handling, database access, business transformations, and utilities for maintainability.
+* **Secure AWS Integration:** Encrypted credentials with custom modules; controlled read/write operations.
+* **Multiple Environments:** Separate configs for dev, QA, and prod with environment-specific credentials, S3 buckets, and database connections.
+* **Schema Validation:** Detects missing mandatory columns; separates invalid files for auditing.
+* **Data Enrichment:** Joins raw sales data with MySQL dimension tables — Customers, Stores, Products, Sales Team.
+* **Customer Data Mart:** Aggregates total purchases per customer.
+* **Sales Team Data Mart:** Calculates monthly sales, salesperson rankings, and incentives using Spark window functions.
+* **Spark Optimization & Partitioning:**
+
+  * Writes partitioned Parquet files by `sales_month` and `store_id` for analytics performance.
+  * Uses window functions for ranking and aggregations.
+* **Business Calculations:** Incentive calculation for top-ranked salespersons (1% of total sales).
+* **Automated Cleanup & Staging Update:** Moves processed files to S3, deletes local temporary files, and updates MySQL staging table status.
+* **Production-Ready Execution:** Docker-based Spark setup, centralized logging, and environment-specific configs ensure consistent behavior across systems.
+
+---
+**Project Structure**
 
 ```text
 Python-Pyspark-ETL/
