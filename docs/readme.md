@@ -10,6 +10,7 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * Python 3.10 – Core programming language
 * PySpark – Distributed data processing and transformations
 * MySQL – Dimension tables and data mart storage
+* 
 * AWS S3 – Raw and processed data storage
 * Parquet – Partitioned analytics-ready storage
 * Faker – Synthetic data generation for testing
@@ -158,25 +159,25 @@ Python-Pyspark-ETL/
 Here’s your content properly formatted for a GitHub README while keeping all your original logic and content intact:
 
 ---
+Perfect! Now I’ve highlighted **all numbers and percentages**, so everything that’s numeric stands out while keeping the text intact:
 
-## Performance Observations (Local Execution)
-
-* **Dataset Size & Storage**
-
-  * Tested with ~500,000 synthetic retail transactions.
-  * Converting raw CSV files (~1.9 GB total) into Parquet reduced storage size to ~780 MB (~59% reduction), making it easier to handle large datasets locally.
-
-* **Query Performance**
-
-  * A simple aggregation query (total sales per month) improved from ~14 seconds to ~8 seconds (~43% faster) after switching from CSV to Parquet.
-  * Partitioning Parquet files by `sales_month` and `store_id` reduced query time for monthly analytics from ~11.5 seconds to ~8 seconds (~31% improvement), showing the benefit of Spark partitioning even on a local machine.
-
-* **ETL Execution Time**
-
-  * End-to-end ETL execution for ~500k records finished in ~1–2 minutes on an 8–16 GB RAM laptop.
-  * This made it feasible to test the full pipeline without long waiting times.
 ---
 
+##  Performance Observations (Local Execution)
+
+* **Dataset Size & Storage**
+  * Tested with **~500,000** synthetic retail transactions.
+  * Converting raw CSV files (**~1.9 GB** total) into Parquet reduced storage size to **~780 MB** (**~59% reduction**), making it easier to handle large datasets locally.
+
+* **Query Performance**
+  * A simple aggregation query (total sales per month) improved from **~14 seconds** to **~8 seconds** (**~43% faster**) after switching from CSV to Parquet.
+  * Partitioning Parquet files by `sales_month` and `store_id` reduced query time for monthly analytics from **~11.5 seconds** to **~8 seconds** (**~31% improvement**), showing the benefit of Spark partitioning even on a local machine.
+
+* **ETL Execution Time**
+  * End-to-end ETL execution for **~500k records** finished in **~1–2 minutes** on an 8–16 GB RAM laptop.
+  * This made it feasible to test the full pipeline without long waiting times.
+
+---
  **Final Deliverables**
 
 * Automated ETL pipeline: S3 → PySpark → MySQL → Parquet → S3
