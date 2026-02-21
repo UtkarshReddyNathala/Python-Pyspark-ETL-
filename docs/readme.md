@@ -1,6 +1,3 @@
-   hjoo
----
-
 # **Python PySpark ETL Pipeline – Retail Sales Data**
 
  **Project Overview**
@@ -21,12 +18,11 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * Logging & Utilities – Encryption/decryption, AWS clients, Spark session, file management
 
 ---
+## Data Architecture
+<img src="architecture.png" width="500">
 
-
-![Data Architecture](architecture.png)
-
-![Data Model](database_schema.drawio.png)
-
+## Data Model
+<img src="database_schema.drawio.png" width="500">
 ---
 
 ✅ **Key Features**
