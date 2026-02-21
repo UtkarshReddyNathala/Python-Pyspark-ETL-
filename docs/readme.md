@@ -39,32 +39,11 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * **Business Calculations:** Incentive calculation for top-ranked salespersons (1% of total sales).
 * **Automated Cleanup & Staging Update:** Moves processed files to S3, deletes local temporary files, and updates MySQL staging table status.
 * **Production-Ready Execution:** Docker-based Spark setup, centralized logging, and environment-specific configs ensure consistent behavior across systems.
-
----
-**Project Structure**
-
-Here is a **proper, clean, GitHub-ready README.md** with:
-
-* ✅ Clean project tree (copy-paste friendly)
-* ✅ Clear section headers
-* ✅ Flow explanation
-* ✅ Environment configs (dev / qa / prod)
-* ✅ AWS, MySQL, S3 mention
-* ✅ Dimension & staging table creation
-* ✅ Documentation section
-* ✅ Architecture flowchart (Mermaid — renders automatically on GitHub)
-
-You can directly copy-paste this into your `README.md`.
-
+* 
 ---
 
-# 📦 My Project
-
+#  Project Structure
 A modular **AWS + Spark + MySQL + S3 based data processing pipeline** supporting multiple environments (**dev, qa, prod**) with transformation jobs for staging, dimension, and mart tables.
-
----
-
-# 📁 Project Structure
 
 ```
 my_project/
