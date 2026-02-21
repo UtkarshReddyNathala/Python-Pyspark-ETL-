@@ -1,18 +1,14 @@
-Perfect! I’ve updated your full README with the **project heading in slightly larger bold text**, fixed the **project tree** to render properly in GitHub, removed repeated points, kept all technical details intact, and added the “How to Run” section at the end.
-
-Here’s the **ready-to-use GitHub README**:
-
 ---
 
 # **Python PySpark ETL Pipeline – Retail Sales Data**
 
-📦 **Project Overview**
+ **Project Overview**
 This project is a backend data processing system designed using production best practices for retail sales. It automates ingestion, validation, enrichment, transformation, and analytics-ready data mart creation using Python, PySpark, AWS S3, and MySQL.
 The pipeline is modular, secure, and optimized, supporting multiple environments (dev/QA/prod), Spark partitioning, business calculations like salesperson incentives, and automated cleanup for production-grade workflows.
 
 ---
 
-⚡ **Tech Stack**
+ **Tech Stack**
 
 * Python 3.10 – Core programming language
 * PySpark – Distributed data processing and transformations
