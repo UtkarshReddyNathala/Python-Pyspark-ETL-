@@ -114,7 +114,7 @@ my_project/
 
 1. **Data Generation (for testing/demo)**
 
-   * Creates synthetic Customers, Stores, Products, Salespersons, and Transactions using Faker.
+   * Creates synthetic data using Faker and is uploaded to Amaon S3
 
 2. **AWS S3 Integration**
 
@@ -132,12 +132,7 @@ my_project/
 
 5. **Data Enrichment**
 
-   * Joins validated data with **MySQL dimension tables**:
-
-     * Customers
-     * Stores
-     * Products
-     * Sales Team
+   * Joins validated data with **MySQL dimension tables**
 
 6. **Data Marts Creation**
 
