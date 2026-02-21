@@ -43,62 +43,104 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 ---
 **Project Structure**
 
-```text
-Python-Pyspark-ETL/
-├── docs/                         # Documentation and README
+Here is a **proper, clean, GitHub-ready README.md** with:
+
+* ✅ Clean project tree (copy-paste friendly)
+* ✅ Clear section headers
+* ✅ Flow explanation
+* ✅ Environment configs (dev / qa / prod)
+* ✅ AWS, MySQL, S3 mention
+* ✅ Dimension & staging table creation
+* ✅ Documentation section
+* ✅ Architecture flowchart (Mermaid — renders automatically on GitHub)
+
+You can directly copy-paste this into your `README.md`.
+
+---
+
+# 📦 My Project
+
+A modular **AWS + Spark + MySQL + S3 based data processing pipeline** supporting multiple environments (**dev, qa, prod**) with transformation jobs for staging, dimension, and mart tables.
+
+---
+
+# 📁 Project Structure
+
+```
+my_project/
+│
+├── docs/                                  # Documentation and README
+│   └── readme.md
+│
 ├── resources/
-│   ├── dev/
-│   │   ├── config.py             # AWS, MySQL, S3 configs (dev)
-│   │   └── requirements.txt
-│   ├── qa/
-│   │   ├── config.py             # AWS, MySQL, S3 configs (qa)
-│   │   └── requirements.txt
-│   ├── prod/
-│   │   ├── config.py             # AWS, MySQL, S3 configs (prod)
-│   │   └── requirements.txt
-│   └── sql_scripts/
-│       └── table_scripts.sql     # Dimension & staging table creation
+│   ├── __init__.py
+│   │
+│   ├── dev/                               # AWS, MySQL, S3 configs (dev)
+│   │   ├── config.py
+│   │   └── requirement.txt
+│   │
+│   ├── qa/                                # AWS, MySQL, S3 configs (qa)
+│   │   ├── config.py
+│   │   └── requirement.txt
+│   │
+│   ├── prod/                              # AWS, MySQL, S3 configs (prod)
+│   │   ├── config.py
+│   │   └── requirement.txt
+│   │
+│   └── sql_scripts/                       # Dimension & staging table creation
+│       └── table_scripts.sql
+│
 ├── src/
 │   ├── main/
-│   │   ├── delete/
+│   │   ├── __init__.py
+│   │
+│   │   ├── delete/                        # Delete operations
 │   │   │   ├── aws_delete.py
 │   │   │   ├── database_delete.py
 │   │   │   └── local_file_delete.py
-│   │   ├── download/
+│   │   │
+│   │   ├── download/                      # Download from S3
 │   │   │   └── aws_file_download.py
-│   │   ├── move/
+│   │   │
+│   │   ├── move/                          # File movement logic
 │   │   │   └── move_files.py
-│   │   ├── read/
+│   │   │
+│   │   ├── read/                          # Read from AWS / Database
 │   │   │   ├── aws_read.py
 │   │   │   └── database_read.py
-│   │   ├── transformations/jobs/
-│   │   │   ├── customer_mart_sql_transform_write.py
-│   │   │   ├── dimension_tables_join.py
-│   │   │   ├── main.py
-│   │   │   └── sales_mart_sql_transform_write.py
-│   │   ├── upload/
+│   │   │
+│   │   ├── transformations/               # Data transformation layer
+│   │   │   └── jobs/
+│   │   │       ├── customer_mart_sql_transform_write.py
+│   │   │       ├── sales_mart_sql_transform_write.py
+│   │   │       ├── dimension_tables_join.py
+│   │   │       └── main.py
+│   │   │
+│   │   ├── upload/                        # Upload to S3
 │   │   │   └── upload_to_s3.py
-│   │   ├── utility/
+│   │   │
+│   │   ├── utility/                       # Common utilities
 │   │   │   ├── encrypt_decrypt.py
 │   │   │   ├── logging_config.py
 │   │   │   ├── s3_client_object.py
 │   │   │   ├── spark_session.py
-│   │   │   └── mysql_connection.py
-│   │   └── write/
+│   │   │   └── my_sql_session.py
+│   │   │
+│   │   └── write/                         # Write to DB / Parquet
 │   │       ├── database_write.py
 │   │       └── parquet_write.py
+│   │
 │   └── test/
 │       ├── scratch_pad.py
 │       └── generate_csv_data.py
-├── .gitignore
-├── requirements.txt
-└── README.md
 ```
 
 ---
-Ah! I understand now — you want the **“Synthetic Data Generation”** section formatted exactly like your **Key Features** section: tight, no extra space after the heading, points aligned, with subpoints indented properly. Here’s the reformatted version:
 
----
+# ⚙️ Environment Configuration
+
+Each environment maintains separate
+
 
 ## Step-by-Step Implementation
 
