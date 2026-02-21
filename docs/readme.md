@@ -187,6 +187,8 @@ Here’s how the reordered **Data Flow and Features** section should look:
       * Database access
       * Transformations
       * Utilities for maintainability and scalability
+     
+![Data Flow](DataFlow.png)
 
 ---
 
