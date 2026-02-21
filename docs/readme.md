@@ -182,6 +182,8 @@ my_project/
 
 **Generate → Validate → Enrich → Transform → Aggregate → Store → Cleanup**
 
+---
+
     <img src="Dataflow.png" alt="Data Flow" width="1300">
 
 ---
