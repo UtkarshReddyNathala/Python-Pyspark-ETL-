@@ -17,6 +17,7 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * **Logging & Utilities** – Encryption,decryption, AWS clients, Spark session management, file handling
 
 ---
+
 <h2 align="center">Data Architecture</h2>
 <p align="center">
   <img src="architecture.png" width="600">
@@ -26,9 +27,10 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 <p align="center">
   <img src="database_schema.drawio.png" width="600">
 </p> 
+
 ---
 
-#  Project Structure
+## Project Structure
 A modular **AWS + Spark + MySQL + S3 based data processing pipeline** supporting multiple environments (**dev, qa, prod**) with transformation jobs for staging, dimension, and mart tables.
 
 ```
