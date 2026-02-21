@@ -1,4 +1,7 @@
 """
+sql_session.py
+===============
+
 MySQL Connection Utility
 
 Purpose:
@@ -14,16 +17,21 @@ def get_mysql_connection():
     """
     Establish and return a MySQL connection.
 
-    Replace placeholder values with actual credentials
-    in dev/qa/prod config files.
+    Note:
+    - Replace placeholder values with actual credentials
+      in dev/qa/prod config files.
+    - Ensure MySQL server is running and accessible.
+    
+    Returns:
+        connection (mysql.connector.connection.MySQLConnection): Active MySQL connection object
     """
 
     try:
         connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="password",
-            database="retail_sales_db"   
+            host="localhost",       # MySQL server host
+            user="root",            # MySQL username
+            password="password",    # MySQL password
+            database="retail_sales_db"   # Database name
         )
 
         if connection.is_connected():
