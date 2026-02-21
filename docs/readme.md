@@ -25,6 +25,12 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 
 ---
 
+
+![Data Architecture](docs/data_architecture.png)
+
+
+---
+
 ✅ **Key Features**
 
 * Backend Data Processing: Retrieves raw files from AWS S3, validates schemas, and prepares structured outputs for analytics.
@@ -167,6 +173,7 @@ Python-Pyspark-ETL/
 * End-to-end ETL execution completed in **1–2 minutes** on local dev environment (8–16 GB RAM)
 
 ---
+
 
 📊 **Final Deliverables**
 
