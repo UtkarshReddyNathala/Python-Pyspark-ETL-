@@ -5,7 +5,7 @@ This project is a backend data processing system designed using production best 
 The pipeline is modular, secure, and optimized, supporting multiple environments (dev/QA/prod), Spark partitioning, business calculations like salesperson incentives, and automated cleanup for production-grade workflows.
 
 ---
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Python 3.10** – Core programming language
 * **PySpark** – Distributed data processing
@@ -26,8 +26,6 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 <p align="center">
   <img src="database_schema.drawio.png" width="600">
 </p> 
----
-
 ---
 
 #  Project Structure
@@ -115,7 +113,7 @@ my_project/
 * **Data Marts**:
 
   * **Customer Data Mart**: Aggregates total purchases per customer.
-  * **Sales Team Data Mart**: Calculates monthly sales and rankings using Spark window functions.
+  * **Sales Team Data Mart**: Calculates monthly sales and rankings using Spark **window functions**
 * **Partitioning & Spark Optimization**:
 
   * Writes partitioned Parquet files by `sales_month` and `store_id` for analytics performance.
@@ -143,17 +141,12 @@ my_project/
     
 ---
 
-
-Perfect! Here’s a **crisp, GitHub-ready, bullet-point version** of your Performance Observations with numbers and proof, exactly in the style you want:
-
----
-
 ## Performance Observations (Local Execution)
 
 * Tested with **~500,000** synthetic retail transactions.
 * Converting CSV to Parquet reduced storage by **~59%** (from ~1.9 GB → ~780 MB).
 * Reading Parquet improved query performance by **~43%** (total sales/month: 14s → 8s).
-* Partitioning by `sales_month` and `store_id` reduced scan time by **~31%** for monthly analytics (11.5s → 8s).
+* Partitioning by **sales_month** and **store_id** reduced scan time by **~31%** for monthly analytics (11.5s → 8s).
 * End-to-end ETL execution completed in **~1–2 minutes** on local dev environment (8–16 GB RAM).
 
 ---
@@ -205,5 +198,6 @@ Perfect! Here’s a **crisp, GitHub-ready, bullet-point version** of your Perfor
 ---
 
 **Author:** Utkarsh Reddy Nathala
+
 **LinkedIn:** https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
