@@ -20,12 +20,12 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 
 <h2 align="center">Data Architecture</h2>
 <p align="center">
-  <img src="architecture.png" width="600">
+  <img src="architecture.png" width="800">
 </p>
 
 <h2 align="center">Data Model</h2>
 <p align="center">
-  <img src="database_schema.drawio.png" width="600">
+  <img src="database_schema.drawio.png" width="800">
 </p> 
 
 ---
