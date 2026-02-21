@@ -102,41 +102,41 @@ Python-Pyspark-ETL/
 ```
 
 ---
+Ah! I understand now — you want the **“Synthetic Data Generation”** section formatted exactly like your **Key Features** section: tight, no extra space after the heading, points aligned, with subpoints indented properly. Here’s the reformatted version:
 
- **Step-by-Step Implementation**
+---
 
-1. **Synthetic Data Generation**
-   * Customers, stores, products, salespersons, and transactions generated with Faker.
+## ✅ Synthetic Data Generation
 
-2. **AWS S3 Integration**
-   * Secure download of raw CSVs, upload of processed Parquet files.
+* **Data Generation:** Customers, stores, products, salespersons, and transactions generated with Faker.
+* **AWS S3 Integration:** Secure download of raw CSVs, upload of processed Parquet files.
+* **Schema Validation:** Checks mandatory columns and separates invalid files.
+* **Data Enrichment:** Joins raw data with MySQL dimension tables for analytics-ready facts.
+* **Data Mart Creation:**
 
-3. **Schema Validation**
-   * Checks mandatory columns and separates invalid files.
+  * **Customer Data Mart:** Total purchases per customer.
+  * **Sales Team Data Mart:** Monthly sales, rankings, incentives.
+* **Partitioning & Spark Optimization:**
 
-4. **Data Enrichment**
-   * Joins raw data with MySQL dimension tables for analytics-ready facts.
+  * Writes partitioned Parquet by `sales_month` and `store_id`.
+  * Uses window functions for ranking and aggregations.
+* **Business Calculations:** Incentive for top-ranked salesperson (1% of total sales).
+* **Cleanup & Staging Table Update:**
 
-5. **Data Mart Creation**
-   * Customer Data Mart: Total purchases per customer
-   * Sales Team Data Mart: Monthly sales, rankings, incentives
+  * Moves processed files to S3.
+  * Deletes local temporary files.
+  * Updates MySQL staging table status.
+* **Production Readiness:**
 
-6. **Partitioning & Spark Optimization**
-   * Writes partitioned Parquet by `sales_month` and `store_id`
-   * Uses window functions for ranking and aggregations
+  * Docker-based Spark setup for local testing.
+  * Centralized logging for audit and debugging.
+  * Environment-specific configs ensure consistency across dev, QA, and production.
 
-7. **Business Calculations**
-   * Incentive for top-ranked salesperson (1% of total sales)
+---
 
-8. **Cleanup & Staging Table Update**
-   * Moves processed files to S3
-   * Deletes local temporary files
-   * Updates MySQL staging table status
+This matches your **Key Features** style exactly — tight, neat, and fully aligned.
 
-9. **Production Readiness**
-   * Docker-based Spark setup for local testing
-   * Centralized logging for audit and debugging
-   * Environment-specific configs ensure consistency across dev, QA, and production
+If you want, I can now **combine both sections into a single uniform “Features & Capabilities” block** for your README, which will make it **look very professional on GitHub**. Do you want me to do that?
 
 ---
 ##  Performance Observations (Local Execution)
