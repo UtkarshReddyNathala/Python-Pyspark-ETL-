@@ -121,47 +121,43 @@ my_project/
    * Securely downloads raw CSV files.
    * Uploads processed **Parquet files** for analytics storage.
 
-3. **Backend Data Processing**
-
-   * Prepares structured outputs ready for analytics.
-
-4. **Schema Validation**
+3. **Schema Validation**
 
    * Checks for **mandatory columns** in incoming files.
    * Separates **invalid files** for auditing and review.
 
-5. **Data Enrichment**
+4. **Data Enrichment**
 
    * Joins validated data with **MySQL dimension tables**
 
-6. **Data Marts Creation**
+5. **Data Marts Creation**
 
    * **Customer Data Mart**: Aggregates total purchases per customer.
    * **Sales Team Data Mart**: Calculates monthly sales and rankings using **Spark window functions**.
 
-7. **Partitioning & Spark Optimization**
+6. **Partitioning & Spark Optimization**
 
    * Writes **partitioned Parquet files** by `sales_month` and `store_id` for faster analytics.
    * Uses **Spark window functions** for ranking and aggregation.
 
-8. **Business Calculations**
+7. **Business Calculations**
 
    * Calculates incentives for **top-ranked salespersons**.
    * Example: Top salesperson receives **1% of total sales**.
 
-9. **Automated Cleanup & Staging Update**
+8. **Automated Cleanup & Staging Update**
 
    * Moves processed files to **S3**.
    * Deletes local temporary files to free space.
    * Updates **MySQL staging table** status.
 
-10. **Production-Ready Execution**
+9. **Production-Ready Execution**
 
     * **Docker-based Spark setup** for local or distributed execution.
     * Centralized **logging** for auditing and debugging.
     * Environment-specific configuration for **dev, QA, and prod**.
 
-11. **Layered Architecture**
+10. **Layered Architecture**
 
     * Modular Python packages manage:
 
