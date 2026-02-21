@@ -28,24 +28,6 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 </p>">
 ---
 
-##  Key Features
-
-* **Backend Data Processing:** Retrieves raw files from AWS S3, validates schemas, and prepares structured outputs for analytics.
-* **Layered Architecture:** Modular Python packages separate file handling, database access, business transformations, and utilities for maintainability.
-* **Secure AWS Integration:** Encrypted credentials with custom modules; controlled read/write operations.
-* **Multiple Environments:** Separate configs for dev, QA, and prod with environment-specific credentials, S3 buckets, and database connections.
-* **Schema Validation:** Detects missing mandatory columns; separates invalid files for auditing.
-* **Data Enrichment:** Joins raw sales data with MySQL dimension tables — Customers, Stores, Products, Sales Team.
-* **Customer Data Mart:** Aggregates total purchases per customer.
-* **Sales Team Data Mart:** Calculates monthly sales, salesperson rankings, and incentives using Spark window functions.
-* **Spark Optimization & Partitioning:**
-
-  * Writes partitioned Parquet files by `sales_month` and `store_id` for analytics performance.
-  * Uses window functions for ranking and aggregations.
-* **Business Calculations:** Incentive calculation for top-ranked salespersons (1% of total sales).
-* **Automated Cleanup & Staging Update:** Moves processed files to S3, deletes local temporary files, and updates MySQL staging table status.
-* **Production-Ready Execution:** Docker-based Spark setup, centralized logging, and environment-specific configs ensure consistent behavior across systems.
-* 
 ---
 
 #  Project Structure
@@ -122,52 +104,45 @@ my_project/
 
 ---
 
-# ⚙️ Environment Configuration
+## Data Flow and Features
 
-Each environment maintains separate
+* **Backend Data Processing**: Retrieves raw files from AWS S3 and prepares structured outputs for analytics.
+* **Schema Validation**:
 
+  * Checks mandatory columns.
+  * Separates invalid files for auditing.
+* **Data Enrichment**: Joins validated data with MySQL dimension tables — Customers, Stores, Products, and Sales Team.
+* **Data Marts**:
 
-## Step-by-Step Implementation
+  * **Customer Data Mart**: Aggregates total purchases per customer.
+  * **Sales Team Data Mart**: Calculates monthly sales and rankings using Spark window functions.
+* **Partitioning & Spark Optimization**:
 
-* **Data Generation:** Customers, stores, products, salespersons, and transactions generated with Faker.
-* **AWS S3 Integration:** Secure download of raw CSVs, upload of processed Parquet files.
-* **Schema Validation:** Checks mandatory columns and separates invalid files.
-* **Data Enrichment:** Joins raw data with MySQL dimension tables for analytics-ready facts.
-* **Data Mart Creation:**
+  * Writes partitioned Parquet files by `sales_month` and `store_id` for analytics performance.
+  * Uses Spark window functions for ranking and aggregations.
+* **Business Calculations**:
 
-  * **Customer Data Mart:** Total purchases per customer.
-  * **Sales Team Data Mart:** Monthly sales, rankings, incentives.
-* **Partitioning & Spark Optimization:**
-
-  * Writes partitioned Parquet by `sales_month` and `store_id`.
-  * Uses window functions for ranking and aggregations.
-* **Business Calculations:** Incentive for top-ranked salesperson (1% of total sales).
-* **Cleanup & Staging Table Update:**
+  * Calculates incentives for top-ranked salespersons.
+  * Top salesperson receives 1% of total sales.
+* **Automated Cleanup & Staging Update**:
 
   * Moves processed files to S3.
   * Deletes local temporary files.
   * Updates MySQL staging table status.
-* **Production Readiness:**
+* **Production-Ready Execution**:
 
-  * Docker-based Spark setup for local testing.
+  * Docker-based Spark setup for local or distributed execution.
   * Centralized logging for audit and debugging.
-  * Environment-specific configs ensure consistency across dev, QA, and production.
+  * Environment-specific configs for dev, QA, and prod.
+* **Layered Architecture**: Modular Python packages manage file operations, database access, transformations, and utilities for maintainability and scalability.
+* **Data Generation**: Generates synthetic Customers, Stores, Products, Salespersons, and Transactions using Faker for testing/demo purposes.
+* **AWS S3 Integration**:
+
+  * Securely downloads raw CSVs.
+  * Uploads processed Parquet files to S3.
+    
 ---
-##  Performance Observations (Local Execution)
 
-* **Dataset Size & Storage**
-  * Tested with **~500,000** synthetic retail transactions.
-  * Converting raw CSV files (**~1.9 GB** total) into Parquet reduced storage size to **~780 MB** (**~59% reduction**), making it easier to handle large datasets locally.
-
-* **Query Performance**
-  * A simple aggregation query (total sales per month) improved from **~14 seconds** to **~8 seconds** (**~43% faster**) after switching from CSV to Parquet.
-  * Partitioning Parquet files by `sales_month` and `store_id` reduced query time for monthly analytics from **~11.5 seconds** to **~8 seconds** (**~31% improvement**), showing the benefit of Spark partitioning even on a local machine.
-
-* **ETL Execution Time**
-  * End-to-end ETL execution for **~500k records** finished in **~1–2 minutes** on an 8–16 GB RAM laptop.
-  * This made it feasible to test the full pipeline without long waiting times.
-
----
  **Final Deliverables**
 
 * Automated ETL pipeline: S3 → PySpark → MySQL → Parquet → S3
