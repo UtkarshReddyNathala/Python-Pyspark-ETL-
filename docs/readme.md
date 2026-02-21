@@ -106,41 +106,88 @@ my_project/
 
 ## Data Flow and Features
 
-* **Backend Data Processing**: Retrieves raw files from AWS S3 and prepares structured outputs for analytics.
-* **Schema Validation**:
+Exactly! If you want the **flow to reflect reality**, it makes sense to move these two sections to the **start**, because in a real project:
 
-  * Checks mandatory columns.
-  * Separates invalid files for auditing.
-* **Data Enrichment**: Joins validated data with MySQL dimension tables — Customers, Stores, Products, and Sales Team.
-* **Data Marts**:
+1. You **first generate or receive the data** (either synthetic for testing or real raw CSVs).
+2. Then you **ingest it from S3** (or local source) for processing.
+3. After that comes **validation, enrichment, transformation**, and so on.
 
-  * **Customer Data Mart**: Aggregates total purchases per customer.
-  * **Sales Team Data Mart**: Calculates monthly sales and rankings using Spark **window functions**
-* **Partitioning & Spark Optimization**:
+Here’s how the reordered **Data Flow and Features** section should look:
 
-  * Writes partitioned Parquet files by `sales_month` and `store_id` for analytics performance.
-  * Uses Spark window functions for ranking and aggregations.
-* **Business Calculations**:
+---
 
-  * Calculates incentives for top-ranked salespersons.
-  * Top salesperson receives 1% of total sales.
-* **Automated Cleanup & Staging Update**:
+## Data Flow and Features
 
-  * Moves processed files to S3.
-  * Deletes local temporary files.
-  * Updates MySQL staging table status.
-* **Production-Ready Execution**:
+1. **Data Generation (for testing/demo)**
 
-  * Docker-based Spark setup for local or distributed execution.
-  * Centralized logging for audit and debugging.
-  * Environment-specific configs for dev, QA, and prod.
-* **Layered Architecture**: Modular Python packages manage file operations, database access, transformations, and utilities for maintainability and scalability.
-* **Data Generation**: Generates synthetic Customers, Stores, Products, Salespersons, and Transactions using Faker for testing/demo purposes.
-* **AWS S3 Integration**:
+   * Generates synthetic datasets for:
 
-  * Securely downloads raw CSVs.
-  * Uploads processed Parquet files to S3.
-    
+     * Customers
+     * Stores
+     * Products
+     * Salespersons
+     * Transactions
+   * Uses the **Faker** library.
+
+2. **AWS S3 Integration**
+
+   * Securely downloads raw CSV files.
+   * Uploads processed **Parquet files** for analytics storage.
+
+3. **Backend Data Processing**
+
+   * Prepares structured outputs ready for analytics.
+
+4. **Schema Validation**
+
+   * Checks for **mandatory columns** in incoming files.
+   * Separates **invalid files** for auditing and review.
+
+5. **Data Enrichment**
+
+   * Joins validated data with **MySQL dimension tables**:
+
+     * Customers
+     * Stores
+     * Products
+     * Sales Team
+
+6. **Data Marts Creation**
+
+   * **Customer Data Mart**: Aggregates total purchases per customer.
+   * **Sales Team Data Mart**: Calculates monthly sales and rankings using **Spark window functions**.
+
+7. **Partitioning & Spark Optimization**
+
+   * Writes **partitioned Parquet files** by `sales_month` and `store_id` for faster analytics.
+   * Uses **Spark window functions** for ranking and aggregation.
+
+8. **Business Calculations**
+
+   * Calculates incentives for **top-ranked salespersons**.
+   * Example: Top salesperson receives **1% of total sales**.
+
+9. **Automated Cleanup & Staging Update**
+
+   * Moves processed files to **S3**.
+   * Deletes local temporary files to free space.
+   * Updates **MySQL staging table** status.
+
+10. **Production-Ready Execution**
+
+    * **Docker-based Spark setup** for local or distributed execution.
+    * Centralized **logging** for auditing and debugging.
+    * Environment-specific configuration for **dev, QA, and prod**.
+
+11. **Layered Architecture**
+
+    * Modular Python packages manage:
+
+      * File operations
+      * Database access
+      * Transformations
+      * Utilities for maintainability and scalability
+
 ---
 
 ## Performance Observations (Local Execution)
