@@ -18,7 +18,7 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 ---
 ## Data Architecture <img src="architecture.png" width="600">
 
-## Data Model <img src="database_schema.drawio.png" width="300">
+## Data Model <img src="database_schema.drawio.png" width="500">
 ---
 ##  Key Features
 
