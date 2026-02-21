@@ -1,8 +1,12 @@
 # **Python PySpark ETL Pipeline – Retail Sales Data**
 
-This project is a backend data processing system designed using production best practices for retail sales. It automates ingestion, validation, enrichment, transformation, and analytics-ready data mart creation using Python, PySpark, AWS S3, and MySQL.
+Designed a backend Data Pipeline that automatically retrieves raw files from cloud storage Amaon S3, verifies data correctness, and prepares structured outputs ready for database storage and reporting.
 
-The pipeline is modular, secure, and optimized, supporting multiple environments (dev/QA/prod), Spark partitioning, business calculations like salesperson incentives, and automated cleanup for production-grade workflows.
+Implemented a clean, layered project architecture using Python packages to isolate file handling, database access, business transformations, and shared utilities, enabling easier debugging and future enhancements.
+
+Built reliable integration logic to move data between AWS S3 and a MySQL database, handling connection management, secure credentials, and controlled read/write operations.
+
+Established a production-ready execution setup using Docker, centralized logging, and environment-specific configurations to ensure consistent behavior across development and testing systems.
 
 ---
 ##  Tech Stack
