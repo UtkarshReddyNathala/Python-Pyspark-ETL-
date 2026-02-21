@@ -10,7 +10,6 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * Python 3.10 – Core programming language
 * PySpark – Distributed data processing and transformations
 * MySQL – Dimension tables and data mart storage
-* 
 * AWS S3 – Raw and processed data storage
 * Parquet – Partitioned analytics-ready storage
 * Faker – Synthetic data generation for testing
@@ -22,12 +21,7 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 
 ## Data Model
 <img src="database_schema.drawio.png" width="600">
-
 ---
-Yes! You can remove the extra space between the heading and the first point so it looks **tighter and cleaner** in GitHub README. Here’s your section reformatted:
-
----
-
 ##  Key Features
 
 * **Backend Data Processing:** Retrieves raw files from AWS S3, validates schemas, and prepares structured outputs for analytics.
@@ -106,7 +100,7 @@ Ah! I understand now — you want the **“Synthetic Data Generation”** sectio
 
 ---
 
-## ✅ Synthetic Data Generation
+## Step-by-Step Implementation
 
 * **Data Generation:** Customers, stores, products, salespersons, and transactions generated with Faker.
 * **AWS S3 Integration:** Secure download of raw CSVs, upload of processed Parquet files.
@@ -131,13 +125,6 @@ Ah! I understand now — you want the **“Synthetic Data Generation”** sectio
   * Docker-based Spark setup for local testing.
   * Centralized logging for audit and debugging.
   * Environment-specific configs ensure consistency across dev, QA, and production.
-
----
-
-This matches your **Key Features** style exactly — tight, neat, and fully aligned.
-
-If you want, I can now **combine both sections into a single uniform “Features & Capabilities” block** for your README, which will make it **look very professional on GitHub**. Do you want me to do that?
-
 ---
 ##  Performance Observations (Local Execution)
 
