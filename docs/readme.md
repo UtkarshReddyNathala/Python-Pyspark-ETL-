@@ -114,14 +114,7 @@ my_project/
 
 1. **Data Generation (for testing/demo)**
 
-   * Generates synthetic datasets for:
-
-     * Customers
-     * Stores
-     * Products
-     * Salespersons
-     * Transactions
-   * Uses the **Faker** library.
+   * Creates synthetic Customers, Stores, Products, Salespersons, and Transactions using Faker.
 
 2. **AWS S3 Integration**
 
