@@ -5,16 +5,17 @@ This project is a backend data processing system designed using production best 
 The pipeline is modular, secure, and optimized, supporting multiple environments (dev/QA/prod), Spark partitioning, business calculations like salesperson incentives, and automated cleanup for production-grade workflows.
 
 ---
- **Tech Stack**
+## 🛠️ Tech Stack
 
-* Python 3.10 – Core programming language
-* PySpark – Distributed data processing and transformations
-* MySQL – Dimension tables and data mart storage
-* AWS S3 – Raw and processed data storage
-* Parquet – Partitioned analytics-ready storage
-* Faker – Synthetic data generation for testing
-* Docker – Optional local Spark setup
-* Logging & Utilities – Encryption/decryption, AWS clients, Spark session, file management
+* **Python 3.10** – Core programming language
+* **PySpark** – Distributed data processing
+* **MySQL** – Dimension tables & data marts
+* **AWS S3** – Raw & processed data storage
+* **Parquet** – Partitioned, analytics-ready storage
+* **Faker** – Synthetic data generation
+* **Docker** – Optional local Spark setup
+* **Logging & Utilities** – Encryption,decryption, AWS clients, Spark session management, file handling
+
 ---
 <h2 align="center">Data Architecture</h2>
 <p align="center">
@@ -26,6 +27,7 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
   <img src="database_schema.drawio.png" width="600">
 </p>">
 ---
+
 ##  Key Features
 
 * **Backend Data Processing:** Retrieves raw files from AWS S3, validates schemas, and prepares structured outputs for analytics.
