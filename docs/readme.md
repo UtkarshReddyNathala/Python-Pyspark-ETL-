@@ -19,22 +19,22 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 ## Data Architecture
 
 <p align="center">
-  <img src="architecture.png" width="600">
+  <img src="architecture.png" width="650">
 </p>
 
 ---
 
 ## Data Model & Data Flow
 
-<table align="center">
+<table width="100%">
   <tr>
-    <td align="center">
-      <h3>Data Model</h3>
-      <img src="database_schema.drawio.png" width="400">
-    </td>
-    <td align="center">
+    <td align="left">
       <h3>Data Flow</h3>
-      <img src="Dataflow.png" width="400">
+      <img src="Dataflow.png" width="500">
+    </td>
+    <td align="right">
+      <h3>Data Model</h3>
+      <img src="database_schema.drawio.png" width="500">
     </td>
   </tr>
 </table>
