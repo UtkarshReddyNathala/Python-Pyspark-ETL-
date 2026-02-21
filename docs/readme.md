@@ -17,24 +17,24 @@ The pipeline is modular, secure, and optimized, supporting multiple environments
 * Logging & Utilities – Encryption/decryption, AWS clients, Spark session, file management
 ---
 ## Data Architecture
+
 <p align="center">
-  <img src="../Dataflow.png" width="600">
+  <img src="architecture.png" width="600">
 </p>
 
+---
+
 ## Data Model & Data Flow
-<table>
+
+<table align="center">
   <tr>
-    <td>
-
-### Data Model
-<img src="database_schema.drawio.png" width="400">
-
+    <td align="center">
+      <h3>Data Model</h3>
+      <img src="database_schema.drawio.png" width="400">
     </td>
-    <td>
-
-### Data Flow
-<img src="../Dataflow.png" width="400">
-
+    <td align="center">
+      <h3>Data Flow</h3>
+      <img src="Dataflow.png" width="400">
     </td>
   </tr>
 </table>
