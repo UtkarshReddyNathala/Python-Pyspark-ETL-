@@ -1,4 +1,7 @@
 """
+database_delete.py
+==================
+
 Database Delete Operations Module
 
 Purpose:
@@ -19,6 +22,10 @@ from src.main.utility.logging_config import logger
 
 
 class DatabaseDelete:
+    """
+    Provides methods to delete records or truncate tables in a MySQL database.
+    """
+
     def __init__(self, connection):
         """
         Initialize with an active MySQL connection.
@@ -38,7 +45,6 @@ class DatabaseDelete:
         :param table_name: Name of the table
         :param condition: SQL condition (WITHOUT 'WHERE')
         """
-
         try:
             cursor = self.connection.cursor()
 
@@ -48,14 +54,10 @@ class DatabaseDelete:
             cursor.execute(query)
             self.connection.commit()
 
-            logger.info(
-                f"Records deleted successfully from {table_name}"
-            )
+            logger.info(f"Records deleted successfully from {table_name}")
 
         except Exception as e:
-            logger.error(
-                f"Error while deleting from {table_name}: {str(e)}"
-            )
+            logger.error(f"Error while deleting from {table_name}: {str(e)}")
             self.connection.rollback()
             raise e
 
@@ -76,7 +78,6 @@ class DatabaseDelete:
 
         :param table_name: Name of the table
         """
-
         try:
             cursor = self.connection.cursor()
 
@@ -86,14 +87,10 @@ class DatabaseDelete:
             cursor.execute(query)
             self.connection.commit()
 
-            logger.info(
-                f"Table {table_name} truncated successfully"
-            )
+            logger.info(f"Table {table_name} truncated successfully")
 
         except Exception as e:
-            logger.error(
-                f"Error while truncating {table_name}: {str(e)}"
-            )
+            logger.error(f"Error while truncating {table_name}: {str(e)}")
             self.connection.rollback()
             raise e
 
