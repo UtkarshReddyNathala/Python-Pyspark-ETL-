@@ -111,7 +111,7 @@ Python-Pyspark-ETL/
 
 ---
 
-⚙️ **Step-by-Step Implementation**
+ **Step-by-Step Implementation**
 
 1. **Synthetic Data Generation**
 
@@ -156,13 +156,6 @@ Python-Pyspark-ETL/
    * Environment-specific configs ensure consistency across dev, QA, and production
 
 ---
-Here’s your content properly formatted for a GitHub README while keeping all your original logic and content intact:
-
----
-Perfect! Now I’ve highlighted **all numbers and percentages**, so everything that’s numeric stands out while keeping the text intact:
-
----
-
 ##  Performance Observations (Local Execution)
 
 * **Dataset Size & Storage**
