@@ -114,43 +114,34 @@ Python-Pyspark-ETL/
  **Step-by-Step Implementation**
 
 1. **Synthetic Data Generation**
-
    * Customers, stores, products, salespersons, and transactions generated with Faker.
 
 2. **AWS S3 Integration**
-
    * Secure download of raw CSVs, upload of processed Parquet files.
 
 3. **Schema Validation**
-
    * Checks mandatory columns and separates invalid files.
 
 4. **Data Enrichment**
-
    * Joins raw data with MySQL dimension tables for analytics-ready facts.
 
 5. **Data Mart Creation**
-
    * Customer Data Mart: Total purchases per customer
    * Sales Team Data Mart: Monthly sales, rankings, incentives
 
 6. **Partitioning & Spark Optimization**
-
    * Writes partitioned Parquet by `sales_month` and `store_id`
    * Uses window functions for ranking and aggregations
 
 7. **Business Calculations**
-
    * Incentive for top-ranked salesperson (1% of total sales)
 
 8. **Cleanup & Staging Table Update**
-
    * Moves processed files to S3
    * Deletes local temporary files
    * Updates MySQL staging table status
 
 9. **Production Readiness**
-
    * Docker-based Spark setup for local testing
    * Centralized logging for audit and debugging
    * Environment-specific configs ensure consistency across dev, QA, and production
